@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript"
+        src="//www.gstatic.com/cast/sdk/libs/receiver/2.0.0/cast_receiver.js"
+        TODOsrc="//www.gstatic.com/cast/sdk/libs/caf_receiver/v3/cast_receiver_framework.js">
+    </script>
+</head>
+<body>
+  <h1>Welcome</h1>
+  <script type="text/javascript">
+    window.onload = function() {
+        //cast.receiver.logger.setLevelValue(0);
+        window.castReceiverManager = cast.receiver.CastReceiverManager.getInstance();
+        window.castReceiverManager.onSenderDisconnected = function(e){
+            console.log('disonnect');
+        };
+        window.castReceiverManager.start({statusText: "Application is starting"});
+        //cast.framework.CastReceiverContext.getInstance().start();
+    }
+  </script>
+</body>
+</html>
