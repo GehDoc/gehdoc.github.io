@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" media="all" href="./style.css"/>
+</head>
+<body translate="no" >
+  <div class="clock-container">
+  <div class="clock-digital">
+    <div class="date"></div>
+    <div class="time"></div>
+    <div class="day"> </div>
+  </div>
+  <div class="clock-analog">
+    <div class="spear"></div>
+    <div class="hour"></div>
+    <div class="minute"></div>
+    <div class="second"></div>
+    <div class="dail"></div>
+  </div>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+      <script id="rendered-js" >
+(function () {
+  // original work from : https://codepen.io/vineethtrv/pen/GvROZV
+
+  const months = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"];
+
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  function getTime() {
+
+    var date = new Date(),
+    second = date.getSeconds(),
+    minute = date.getMinutes(),
+    hour = date.getHours(),
+    time = date.toLocaleString('fr-FR', { hour: 'numeric', minute: 'numeric', hour12: false }),
+    day = date.getDay(),
+    month = date.getMonth(),
+    date = date.getDate() + ' . ' + months[month],
+
+    ds = second * -6,
+    dm = minute * -6,
+    dh = hour * -15;
+
+    $('.second').css('transform', 'rotate(' + ds + 'deg)');
+    $('.minute').css('transform', 'rotate(' + dm + 'deg)');
+    $('.hour').css('transform', 'rotate(' + dh + 'deg)');
+
+    $('.time').text(time);
+    $('.day').text(days[day]);
+    $('.date').text(date);
+  }
+
+  function dailer(selector, size) {
+    for (var s = 0; s < 60; s++) {
+      $(selector).append('<span style="transform: rotate(' + 6 * s + 'deg) translateX(' + size + 'px)">' + s + '</span>');
+    }
+  }
+
+  dailer('.second', 195);
+  dailer('.minute', 145);
+  dailer('.dail', 230);
+
+  for (var s = 1; s < 25; s++) {
+    $('.hour').append('<span style="transform: rotate(' + 15 * s + 'deg) translateX(100px)">' + (s === 24 ? 0 : s) + '</span>');
+  }
+
+
+  setInterval(getTime, 1000);
+  getTime();
+
+})();
+//# sourceURL=pen.js
+    </script>
+
+</body>
+</html>
