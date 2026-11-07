@@ -3,7 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GehDoc</title>
+
+    <!-- Page Title (Target: 50-60 Characters) -->
+    <title>GehDoc | Developer & Animated SVG to Video Converter</title>
+
+    <!-- Basic Meta Tags -->
+    <meta name="description" content="Official personal site of GehDoc. Discover featured open-source software like SVG to Video (MP4/WebM/GIF converter with CLI & MCP support) and explore all GitHub projects." />
+    <meta name="keywords" content="GehDoc, SVG to Video, convert SVG to MP4, SVG animation to WebM, GIF converter, MCP server, open source developer" />
+    <meta name="author" content="GehDoc" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://gehdoc.github.io/" />
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/png" href="https://github.com/gehdoc.png" />
+    <link rel="apple-touch-icon" href="https://github.com/gehdoc.png" />
+
+    <!-- Open Graph Meta Tags (For Facebook, LinkedIn, Discord previews) -->
+    <meta property="og:site_name" content="GehDoc Portfolio" />
+    <meta property="og:title" content="GehDoc | Developer Profile & SVG to Video Tools" />
+    <meta property="og:description" content="Explore open-source tools by GehDoc, featuring SVG to Video—a converter for CSS & SMIL animations to MP4, WebM, and GIF." />
+    <meta property="og:image" content="https://github.com/gehdoc.png" />
+    <meta property="og:url" content="https://gehdoc.github.io/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="GehDoc | Developer Profile & SVG to Video Converter" />
+    <meta name="twitter:description" content="Discover SVG to Video and developer tools built by GehDoc on GitHub." />
+    <meta name="twitter:image" content="https://github.com/gehdoc.png" />
+
+    <!-- Schema.org JSON-LD (Structured Data for Search Engines) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://gehdoc.github.io/#person",
+          "name": "GehDoc",
+          "url": "https://gehdoc.github.io/",
+          "sameAs": [
+            "https://github.com/gehdoc"
+          ],
+          "image": "https://github.com/gehdoc.png",
+          "jobTitle": "Software Developer"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://gehdoc.github.io/svg-to-video/#software",
+          "name": "SVG to Video",
+          "operatingSystem": "Cross-platform",
+          "applicationCategory": "DeveloperApplication",
+          "description": "Professional animated SVG (CSS & SMIL) to Video (MP4/WebM/MKV/MOV) and Animated Image (aPNG/GIF) converter featuring frame-accurate rendering, CLI automation, and MCP integration.",
+          "url": "https://gehdoc.github.io/svg-to-video/",
+          "author": {
+            "@id": "https://gehdoc.github.io/#person"
+          },
+          "codeRepository": "https://github.com/gehdoc/svg-to-video"
+        }
+      ]
+    }
+    </script>
+
     <style>
       :root {
         --bg: #0f172a;
@@ -11,11 +74,11 @@
         --text: #e5e7eb;
         --muted: #9ca3af;
         --accent: #7dd3fc;
-        --border: rgba(255,255,255,0.08);
+        --border: rgba(255, 255, 255, 0.08);
       }
-
-      * { box-sizing: border-box; }
-
+      * {
+        box-sizing: border-box;
+      }
       body {
         margin: 0;
         min-height: 100vh;
@@ -26,88 +89,116 @@
         font-family: Arial, Helvetica, sans-serif;
         padding: 32px;
       }
-
       .container {
         width: min(760px, 100%);
         background: var(--panel);
         border: 1px solid var(--border);
         border-radius: 18px;
         padding: 32px 28px;
-        box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
       }
-
+      header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 8px;
+      }
+      .avatar {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        border: 2px solid var(--accent);
+      }
       .label {
-        margin: 0 0 12px;
+        margin: 0 0 4px;
         color: var(--accent);
         font-size: 12px;
         letter-spacing: 0.12em;
         text-transform: uppercase;
       }
-
       h1 {
-        margin: 0 0 18px;
+        margin: 0;
         font-size: clamp(2rem, 4vw, 3rem);
       }
-
-      .links {
+      nav.links {
         display: flex;
         flex-wrap: wrap;
         gap: 12px;
         margin: 24px 0 32px;
       }
-
       a {
         color: var(--text);
         text-decoration: none;
         border: 1px solid var(--border);
-        background: rgba(255,255,255,0.02);
+        background: rgba(255, 255, 255, 0.02);
         padding: 10px 14px;
         border-radius: 10px;
+        display: inline-block;
+        transition: all 0.2s ease;
       }
-
       a:hover {
         border-color: rgba(125, 211, 252, 0.6);
+        background: rgba(125, 211, 252, 0.05);
       }
-
       .project {
         border-top: 1px solid var(--border);
         padding-top: 24px;
       }
-
       h2 {
-        margin: 0 0 8px;
+        margin: 0 0 12px;
         font-size: 1.5rem;
       }
-
       p {
-        margin: 0;
+        margin: 0 0 16px;
         color: var(--muted);
         line-height: 1.7;
       }
-
-      .repo-link {
-        margin-top: 12px;
+      .project-links {
+        display: flex;
+        gap: 12px;
+        margin-top: 16px;
+      }
+      footer.more-projects {
+        border-top: 1px solid var(--border);
+        margin-top: 32px;
+        padding-top: 24px;
+        text-align: center;
       }
     </style>
   </head>
   <body>
     <main class="container">
-      <p class="label">GitHub Pages</p>
-      <h1>GehDoc</h1>
+      <header>
+        <img src="https://github.com/gehdoc.png" alt="GehDoc Avatar" class="avatar" />
+        <div>
+          <p class="label">GitHub Pages Profile</p>
+          <h1>GehDoc</h1>
+        </div>
+      </header>
 
-      <div class="links">
-        <a href="https://github.com/gehdoc">GitHub profile</a>
-        <a href="https://github.com/gehdoc/svg-to-video">SVG to Video repository</a>
-        <a href="https://gehdoc.github.io/svg-to-video/">SVG to Video project page</a>
-      </div>
+      <nav class="links" aria-label="Main navigation links">
+        <a href="https://github.com/gehdoc" target="_blank" rel="noopener">GitHub Profile</a>
+        <a href="https://github.com/gehdoc/svg-to-video" target="_blank" rel="noopener">SVG to Video Repo</a>
+        <a href="https://gehdoc.github.io/svg-to-video/" target="_blank" rel="noopener">SVG to Video Live Demo</a>
+      </nav>
 
-      <section class="project">
-        <h2>Featured project</h2>
-        <p>SVG to Video</p>
-        <p class="repo-link">
-          <a href="https://github.com/gehdoc/svg-to-video">Repository</a>
+      <article class="project">
+        <h2>Featured Project: SVG to Video</h2>
+        <p>
+          <strong>SVG to Video</strong> is a professional converter for turning animated vector graphics (CSS & SMIL animations) into MP4, WebM, MKV, MOV, aPNG, and GIF formats. Features frame-accurate rendering, CLI automation, and Model Context Protocol (MCP) server integration.
         </p>
-      </section>
+        <div class="project-links">
+          <a href="https://gehdoc.github.io/svg-to-video/">Try Live Demo →</a>
+          <a href="https://github.com/gehdoc/svg-to-video">View Repository on GitHub</a>
+        </div>
+      </article>
+
+      <footer class="more-projects">
+        <p>Looking for more developer tools and open-source projects?</p>
+        <a href="https://github.com/gehdoc?tab=repositories" target="_blank" rel="noopener">
+          Explore all projects on GitHub Profile →
+        </a>
+      </footer>
     </main>
   </body>
 </html>
