@@ -45,7 +45,8 @@
           "name": "GehDoc",
           "url": "https://gehdoc.github.io/",
           "sameAs": [
-            "https://github.com/gehdoc"
+            "https://github.com/gehdoc",
+            "https://github.com/sponsors/gehdoc"
           ],
           "image": "https://github.com/gehdoc.png",
           "jobTitle": "Software Developer"
@@ -74,6 +75,7 @@
         --text: #e5e7eb;
         --muted: #9ca3af;
         --accent: #7dd3fc;
+        --sponsor: #f43f5e;
         --border: rgba(255, 255, 255, 0.08);
       }
       * {
@@ -133,12 +135,35 @@
         background: rgba(255, 255, 255, 0.02);
         padding: 10px 14px;
         border-radius: 10px;
-        display: inline-block;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
         transition: all 0.2s ease;
       }
       a:hover {
         border-color: rgba(125, 211, 252, 0.6);
         background: rgba(125, 211, 252, 0.05);
+      }
+      a.btn-sponsor:hover {
+        border-color: rgba(244, 63, 94, 0.6);
+        background: rgba(244, 63, 94, 0.08);
+      }
+      .btn-icon {
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        display: block;
+      }
+      .heart-icon {
+        color: var(--sponsor);
+        transition: transform 0.2s ease;
+      }
+      a.btn-sponsor:hover .heart-icon {
+        transform: scale(1.15);
+      }
+      .favicon-icon {
+        border-radius: 3px;
+        object-fit: contain;
       }
       .project {
         border-top: 1px solid var(--border);
@@ -155,6 +180,7 @@
       }
       .project-links {
         display: flex;
+        flex-wrap: wrap;
         gap: 12px;
         margin-top: 16px;
       }
@@ -177,9 +203,19 @@
       </header>
 
       <nav class="links" aria-label="Main navigation links">
-        <a href="https://github.com/gehdoc" target="_blank" rel="noopener">GitHub Profile</a>
-        <a href="https://github.com/gehdoc/svg-to-video" target="_blank" rel="noopener">SVG to Video Repo</a>
-        <a href="https://gehdoc.github.io/svg-to-video/" target="_blank" rel="noopener">SVG to Video Live Demo</a>
+        <a href="https://github.com/gehdoc" target="_blank" rel="noopener">
+          <svg class="btn-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+          </svg>
+          <span>GitHub Profile</span>
+        </a>
+
+        <a href="https://github.com/sponsors/gehdoc" target="_blank" rel="noopener" class="btn-sponsor">
+          <svg class="btn-icon heart-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <path d="M7.655 14.916v-.001h-.002l-.006-.003-.018-.01a22.066 22.066 0 0 1-3.744-2.584C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.066 22.066 0 0 1-3.744 2.584l-.018.01-.006.003h-.002ZM4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.58 20.58 0 0 0 8 13.393a20.58 20.58 0 0 0 3.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.749.749 0 0 1-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5Z"></path>
+          </svg>
+          <span>Sponsor on GitHub</span>
+        </a>
       </nav>
 
       <article class="project">
@@ -188,8 +224,22 @@
           <strong>SVG to Video</strong> is a professional converter for turning animated vector graphics (CSS & SMIL animations) into MP4, WebM, MKV, MOV, aPNG, and GIF formats. Features frame-accurate rendering, CLI automation, and Model Context Protocol (MCP) server integration.
         </p>
         <div class="project-links">
-          <a href="https://gehdoc.github.io/svg-to-video/">Try Live Demo →</a>
-          <a href="https://github.com/gehdoc/svg-to-video">View Repository on GitHub</a>
+          <a href="https://gehdoc.github.io/svg-to-video/" target="_blank" rel="noopener">
+            <img
+              src="https://gehdoc.github.io/svg-to-video/favicon.ico"
+              onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=gehdoc.github.io/svg-to-video&sz=32';"
+              alt=""
+              class="btn-icon favicon-icon"
+              aria-hidden="true"
+            />
+            <span>Try Live Demo →</span>
+          </a>
+          <a href="https://github.com/gehdoc/svg-to-video" target="_blank" rel="noopener">
+            <svg class="btn-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+            </svg>
+            <span>View Repository on GitHub</span>
+          </a>
         </div>
       </article>
 
